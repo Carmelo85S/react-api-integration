@@ -1,0 +1,43 @@
+@use '../../style/font';
+@use '../../style/color';
+@import '../../style/mixin';
+
+.navbar-wrapper{
+    @include wrapper(100vw, 79px);
+    background: color.$body-bg;
+
+    .navbar-container{
+        @include container(1282px, 79px);
+        @include flexbox(space-between, center, row);
+
+        .logo{
+            @include logo;
+        }
+
+        .link-container{
+            @include container(373px, 23px);
+            @include flexbox(space-between, center);
+
+            .link{
+                @include link;
+                transition: 0.2s ease-in;
+
+                &:hover{
+                    transform: scale(1.05);
+                    color: color.$hover;
+                }
+            }
+        }
+
+        .icons{
+            color: color.$icons;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            &:hover{
+                color: color.$hover;
+                transform: scale(1.05);
+            }
+        }        
+    }
+}
