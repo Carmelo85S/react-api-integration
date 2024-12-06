@@ -15,7 +15,7 @@
         }
 
         .link-container{
-            @include container(373px, 23px);
+            @include container(273px, 23px);
             @include flexbox(space-between, center);
 
             .link{

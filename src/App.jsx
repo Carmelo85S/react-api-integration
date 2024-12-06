@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Navbar from "./components/navbar/Navbar"
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
+import Body from "./components/body/Body";
 import './app.css';
 
 const App = () => {
@@ -7,7 +8,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
-    </BrowserRouter>
+      <Body />
+      </BrowserRouter>
  
   )
 }

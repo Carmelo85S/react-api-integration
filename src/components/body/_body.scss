@@ -1,0 +1,107 @@
+@use '../../style/font';
+@use '../../style/color';
+@import '../../style/mixin';
+
+.hero-wrapper{
+    @include wrapper($min-height: 90vh);
+    background: color.$body-bg;
+
+    .hero-container{
+        @include container(817px, 430px);
+        @include flexbox(space-between, center, column);
+
+        &-top{
+            @include container(817px, 330px);
+            @include flexbox(space-between, center, row);
+
+            .hero-text{
+                @include container(600px, 190px);
+                font-family: font.$averia;
+                font-weight: 400;
+                font-size: 70px;
+                line-height: 96px;
+                color: color.$text;
+            }
+
+            img{
+                width: 165px;
+            }
+        }
+
+        &-bottom{
+            @include container(817px, 75px);
+            @include flexbox(space-between, center);
+            margin-bottom: 30px;
+
+            .icon-input{
+                position: relative;
+                left: 50px;
+            }
+
+            .input{
+                @include container(816px, 60px);
+                padding-left: 50px;
+                font-size: 16px;
+            }
+
+            .searchBtn{
+                padding: 22px 55px;
+                color: black;
+                background-color: color.$btn-bg;
+                border: 1px solid white;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: color.$hover;
+                }
+
+                &:active{
+                    background-color: rgb(155, 255, 4);;
+                    transform: scale(1.05);
+                }
+            }
+        }
+        
+        .data-container {
+            @include container(817px, 200px);
+            background-color: white;
+            border-radius: 5px;
+            position: relative; // Imposta il contesto di posizionamento
+            padding-right: 120px; // Distanza per il pulsante in modo che non sovrapponga il testo
+        
+            .delete {
+                font-size: 20px;
+                width: 25px;
+                height: 25px;
+                border-radius: 50px;
+                background-color: inherit;
+                border: none;
+                font-family: font.$averia;
+                color: rgb(40, 40, 40);
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+
+                &:active{
+                    transform: scale(0.80);
+                }
+            }
+        
+            h2 {
+                font-family: font.$averia;
+                text-align: center;
+                color: black;
+            }
+        
+            .data {
+                border-radius: 10px;
+                color: black;
+                padding: 10px;
+                text-align: center;
+                font-family: font.$averia;
+                font-size: 14px;
+            }
+        }
+    }
+}
